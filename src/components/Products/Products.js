@@ -30,9 +30,9 @@ const Products = () => {
       .then((data) => setProducts(data));
   }, []);
   return (
-    <div className="row w-100">
-      <div className="product col-lg-9 ">
-        <div className="row row-cols-3 container mx-auto">
+    <div className="row w-100 mt-5">
+      <div className="product col-lg-9 col-8">
+        <div className="row row-cols-lg-3 container mx-auto">
           {products.map((product) => (
             <Product
               product={product}
@@ -42,7 +42,7 @@ const Products = () => {
           ))}
         </div>
       </div>
-      <div className="cart col-lg-3 mt-5">
+      <div className="cart col-lg-3 col-4  mt-5">
         <Cart
           pickAgain={pickAgain}
           random={random}
