@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Card } from "react-bootstrap";
 
-const Product = ({ product }) => {
+const Product = ({ product, addToCart }) => {
   return (
     <div className="mb-4">
       <Card className="rounded-3" style={{ width: "18rem" }}>
@@ -9,7 +9,14 @@ const Product = ({ product }) => {
         <Card.Body>
           <Card.Title>{product.name}</Card.Title>
           <Card.Text>Price: {product.price}</Card.Text>
-          <Button variant="primary">Add to Cart</Button>
+          <Button
+            onClick={() => {
+              addToCart(product);
+            }}
+            variant="dark"
+          >
+            Add to Cart
+          </Button>
         </Card.Body>
       </Card>
     </div>
