@@ -19,6 +19,10 @@ const Products = () => {
     const randomItems = Math.round(Math.random() * cart.length);
     setRandom(cart[randomItems].name);
   };
+  const pickAgain = () => {
+    setCart([]);
+    setRandom([]);
+  };
 
   useEffect(() => {
     fetch("data.json")
@@ -39,7 +43,12 @@ const Products = () => {
         </div>
       </div>
       <div className="cart col-lg-3 mt-5">
-        <Cart random={random} pickOne={pickOne} cart={cart}></Cart>
+        <Cart
+          pickAgain={pickAgain}
+          random={random}
+          pickOne={pickOne}
+          cart={cart}
+        ></Cart>
       </div>
     </div>
   );
