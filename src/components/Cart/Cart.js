@@ -1,19 +1,25 @@
 import React from "react";
-import { Button, Card } from "react-bootstrap";
 
-const Cart = ({ cart }) => {
+const Cart = ({ cart, pickOne }) => {
   return (
-    <div>
-      <Card style={{ width: "18rem" }}>
-        <Card.Body>
-          <Card.Title>{cart.name}</Card.Title>
-          <Button className="mb-3" variant="primary">
-            Pick Randomly
-          </Button>
-          <br />
-          <Button variant="primary">Pick Again</Button>
-        </Card.Body>
-      </Card>
+    <div className="card sticky-top">
+      {cart.map((item) => (
+        <div>
+          <li>{item.name}</li>
+        </div>
+      ))}
+      <div className="d-flex flex-column align-items-center mt-3">
+        <button
+          onClick={() => {
+            pickOne();
+          }}
+          className=" btn btn-success"
+        >
+          Pick Randomly
+        </button>
+        <br />
+        <button className=" btn btn-success">Pick Again</button>
+      </div>
     </div>
   );
 };

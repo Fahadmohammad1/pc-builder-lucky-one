@@ -29,7 +29,7 @@ const Products = () => {
           ))}
         </div>
       </div>
-      <div className="cart col-lg-3 bg-success">
+      <div className="cart col-lg-3 mt-5">
         <Cart cart={cart}></Cart>
       </div>
     </div>

@@ -10,10 +10,10 @@ const Product = ({ product, addToCart }) => {
           <Card.Title>{product.name}</Card.Title>
           <Card.Text>Price: {product.price}</Card.Text>
           <Button
+            className="fw-bold btn btn-outline-dark"
             onClick={() => {
               addToCart(product);
             }}
-            variant="dark"
           >
             Add to Cart
           </Button>
