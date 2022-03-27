@@ -1,6 +1,6 @@
 import React from "react";
 
-const Cart = ({ cart, pickOne }) => {
+const Cart = ({ cart, pickOne, random, pickAgain }) => {
   return (
     <div className="card sticky-top">
       {cart.map((item) => (
@@ -17,8 +17,15 @@ const Cart = ({ cart, pickOne }) => {
         >
           Pick Randomly
         </button>
-        <br />
-        <button className=" btn btn-success">Pick Again</button>
+        <h5 className="my-3 ">{random}</h5>
+        <button
+          onClick={() => {
+            pickAgain();
+          }}
+          className=" btn btn-success"
+        >
+          Pick Again
+        </button>
       </div>
     </div>
   );
